@@ -1,0 +1,33 @@
+<mat-card class="card">
+  <mat-card-header>
+    <mat-card-title>
+      <h1>Pokemons</h1>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item *ngFor="let pokemon of pokemons">
+        <div #list class="top">
+          <img
+            mat-card-image
+            [src]="pokemon.sprites.front_default"
+            [alt]="pokemon.name"
+          />
+          <img mat-card-image [src]="pokemon.sprites.back_default" />
+          <h3 mat-line>{{ pokemon.name }}</h3>
+          <h3 mat-line>{{ pokemon.id }}</h3>
+          <div class="data">
+            <p>Height: {{ pokemon.height }}</p>
+            <p>Weight: {{ pokemon.weight }}</p>
+            <p>Abilities: {{ pokemon.abilities[0].ability.name }}</p>
+          </div>
+        </div>
+        <!-- <div class="data">
+          <p>Height: {{ pokemon.height }}</p>
+          <p>Weight: {{ pokemon.weight }}</p>
+          <p>Abilities: {{ pokemon.abilities[0].ability.name }}</p>
+        </div> -->
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>
